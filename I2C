@@ -1,0 +1,17 @@
+void setup() {
+  Wire.begin(8);
+  Wire.onReceive(RemoveKabeb);
+  Serial.begin(9600);
+}
+void loop() {
+   
+}
+
+void RemoveKabeb(int numBytes)
+{
+  while (Wire.available())
+  {
+    char key = Wire.read();
+    Serial.println(key);
+  }
+}
